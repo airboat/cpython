@@ -826,7 +826,7 @@ Reader_iternext(ReaderObj *self)
             if (c == '\0') {
                 Py_DECREF(lineobj);
                 PyErr_Format(_csvstate_global->error_obj,
-                             "line contains NUL");
+                             "line contains NULL byte");
                 goto err;
             }
             if (parse_process_char(self, c) < 0) {
